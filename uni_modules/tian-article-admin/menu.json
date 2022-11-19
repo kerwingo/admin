@@ -1,0 +1,49 @@
+[{
+		"menu_id": "opendb-news-management",
+		"name": "文章管理",
+		"icon": "uni-icons-paperplane",
+		"sort": 300,
+		"parent_id": "",
+		"permission": [],
+		"enable": true
+	},
+	{
+		"menu_id": "opendb-news-articles-list",
+		"name": "文章信息管理",
+		"icon": "uni-icons-compose",
+		"url": "uni_modules/tian-article-admin/pages/opendb-news-articles/list",
+		"sort": 1,
+		"parent_id": "opendb-news-management",
+		"permission": [],
+		"enable": true
+	}, {
+		"menu_id": "opendb-news-categories-list",
+		"name": "文章分类管理",
+		"icon": "uni-icons-bars",
+		"url": "uni_modules/tian-article-admin/pages/opendb-news-categories/list",
+		"sort": 2,
+		"parent_id": "opendb-news-management",
+		"permission": [],
+		"enable": true
+	},
+	{
+		"menu_id": "opendb-news-comments-list",
+		"name": "文章评论管理",
+		"icon": "uni-icons-chat",
+		"url": "uni_modules/tian-article-admin/pages/opendb-news-comments/list",
+		"sort": 3,
+		"parent_id": "opendb-news-management",
+		"permission": [],
+		"enable": true
+	},
+	{
+		"menu_id": "opendb-news-favorite-list",
+		"name": "文章收藏管理",
+		"icon": "uni-icons-heart",
+		"url": "uni_modules/tian-article-admin/pages/opendb-news-favorite/list",
+		"sort": 4,
+		"parent_id": "opendb-news-management",
+		"permission": [],
+		"enable": true
+	}
+]

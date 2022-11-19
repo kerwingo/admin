@@ -1,0 +1,47 @@
+// 文档教程: https://uniapp.dcloud.net.cn/uniCloud/schema
+{
+	"bsonType": "object",
+	"required": [],
+	"permission": {
+		"read": false,
+		"create": false,
+		"update": false,
+		"delete": false
+	},
+	"properties": {
+		"_id": {
+			"description": "ID，系统自动生成"
+		},
+		"article_id": {
+			"bsonType": "string",
+			"description": "文章ID，opendb-news-posts 表中的`_id`字段",
+			"foreignKey": "opendb-news-articles._id"
+		},
+		"user_id": {
+			"bsonType": "string",
+			"description": "用户ID，参考`uni-id-users` 表",
+			"forceDefaultValue": {
+				"$env": "uid"
+			},
+			"foreignKey": "uni-id-users._id"
+		},
+		"read_ip": {
+			"bsonType": "string",
+			"description": "浏览时 IP 地址",
+			"forceDefaultValue": {
+				"$env": "clientIP"
+			}
+		},
+		"getdouble": {
+			"bsonType": "bool",
+			"description": "是否获得双倍"
+		},
+		"create_date": {
+			"bsonType": "timestamp",
+			"description": "浏览时间",
+			"forceDefaultValue": {
+				"$env": "now"
+			}
+		}
+	}
+}

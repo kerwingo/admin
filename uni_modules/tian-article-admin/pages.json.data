@@ -1,0 +1,66 @@
+{
+	"subPackages": [{
+		"root": "uni_modules/tian-article-admin",
+		"pages": [{
+			"path": "pages/opendb-news-articles/add",
+			"style": {
+				"navigationBarTitleText": "新增"
+			}
+		}, {
+			"path": "pages/opendb-news-articles/edit",
+			"style": {
+				"navigationBarTitleText": "修改"
+			}
+		}, {
+			"path": "pages/opendb-news-articles/list",
+			"style": {
+				"navigationBarTitleText": "文章列表"
+			}
+		}, {
+			"path": "pages/opendb-news-categories/add",
+			"style": {
+				"navigationBarTitleText": "新增"
+			}
+		}, {
+			"path": "pages/opendb-news-categories/edit",
+			"style": {
+				"navigationBarTitleText": "修改"
+			}
+		}, {
+			"path": "pages/opendb-news-categories/list",
+			"style": {
+				"navigationBarTitleText": "文章分类列表"
+			}
+		}, {
+			"path": "pages/opendb-news-comments/add",
+			"style": {
+				"navigationBarTitleText": "新增"
+			}
+		}, {
+			"path": "pages/opendb-news-comments/edit",
+			"style": {
+				"navigationBarTitleText": "修改"
+			}
+		}, {
+			"path": "pages/opendb-news-comments/list",
+			"style": {
+				"navigationBarTitleText": "文章评论列表"
+			}
+		}, {
+			"path": "pages/opendb-news-favorite/add",
+			"style": {
+				"navigationBarTitleText": "新增"
+			}
+		}, {
+			"path": "pages/opendb-news-favorite/edit",
+			"style": {
+				"navigationBarTitleText": "修改"
+			}
+		}, {
+			"path": "pages/opendb-news-favorite/list",
+			"style": {
+				"navigationBarTitleText": "文章收藏列表"
+			}
+		}]
+	}]
+}
