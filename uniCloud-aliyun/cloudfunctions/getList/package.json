@@ -1,0 +1,14 @@
+{
+    "name": "getList",
+    "dependencies": [],
+    "extensions": {
+        "uni-cloud-jql": []
+    },
+    "cloudfunction-config": {
+        "memorySize": 512,
+        "timeout": 5,
+        "triggers": [],
+        "path": "/getList",
+        "runtime": "Nodejs8"
+    }
+}
