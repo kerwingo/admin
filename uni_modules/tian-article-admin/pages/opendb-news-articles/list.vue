@@ -66,6 +66,8 @@
 	// 分页配置
 	const pageSize = 10
 	const pageCurrent = 1
+	
+	const blogArticles = uniCloud.importObject('uni-blog-articles')
 
 	export default {
 		data() {
@@ -79,6 +81,9 @@
 					pageCurrent
 				}
 			}
+		},
+		onLoad() {
+			console.log(blogArticles.list({}))
 		},
 		methods: {
 			getWhere() {
