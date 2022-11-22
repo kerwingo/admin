@@ -82,8 +82,8 @@
 				}
 			}
 		},
-		onLoad() {
-			console.log(blogArticles.list({}))
+		async onLoad() {
+			await blogArticles.list({category_id: "63789ef8e7f27c000189554e"})
 		},
 		methods: {
 			getWhere() {

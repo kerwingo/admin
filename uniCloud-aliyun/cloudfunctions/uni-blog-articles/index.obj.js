@@ -29,22 +29,27 @@ module.exports = {
 	 * @returns {object} 返回值描述
 	 */
 
-	async list(param1) {
+	async list(param) {
 		// 参数校验，如无参数则不需要
-		if (!param1) {
+		if (!param) {
 			return {
 				errCode: 'PARAM_IS_NULL',
 				errMsg: '参数不能为空'
 			}
 		}
+		console.log(param,8888)
+		const category_id = param.category_id || ''
 		// 业务逻辑
-		const {
-			data
-		} = await db.collection('opendb-news-articles').get()
+		let res;
+		if (category_id) {
+			res = await db.collection('opendb-news-articles').where(`category_id=='${category_id}'`).get()
+		} else {
+			res = await db.collection('opendb-news-articles').get()
+		}
 		// 返回结果
 		return {
 			code: 200,
-			data
+			data:res.data
 		}
 	}
 
