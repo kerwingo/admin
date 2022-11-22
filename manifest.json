@@ -88,7 +88,7 @@
         "template" : "template.h5.html",
         "router" : {
             "mode" : "hash",
-            "base" : "/admin/"
+            "base" : "/kerwingo.github.io.admin/"
         },
         "uniStatistics" : {
             "enable" : true
