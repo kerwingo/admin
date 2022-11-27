@@ -52,16 +52,16 @@
 			"description": "错误信息"
 		},
 		"count": {
-			"bsonType":"int",
-			"description":"报错次数"
+			"bsonType": "int",
+			"description": "报错次数"
 		},
 		"app_launch_count": {
 			"bsonType": "int",
 			"description": "本时间段App启动或从后台切到前台的次数"
 		},
 		"last_time": {
-			"bsonType":"timestamp",
-			"description":"最近一次报错事件"
+			"bsonType": "timestamp",
+			"description": "最近一次报错事件"
 		},
 		"dimension": {
 			"bsonType": "string",
@@ -72,7 +72,7 @@
 			}, {
 				"text": "周",
 				"value": "week"
-			},{
+			}, {
 				"text": "天",
 				"value": "day"
 			}, {
@@ -80,17 +80,17 @@
 				"value": "hour"
 			}]
 		},
-		"stat_date":{
-			"bsonType":"int",
-			"description":"统计日期，格式yyyymmdd，例:20211201"
+		"stat_date": {
+			"bsonType": "int",
+			"description": "统计日期，格式yyyymmdd，例:20211201"
 		},
-		"start_time":{
-			"bsonType":"timestamp",
-			"description":"开始时间"
+		"start_time": {
+			"bsonType": "timestamp",
+			"description": "开始时间"
 		},
-		"end_time":{
-			"bsonType":"timestamp",
-			"description":"结束时间"
+		"end_time": {
+			"bsonType": "timestamp",
+			"description": "结束时间"
 		}
 	}
 }
