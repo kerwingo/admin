@@ -1,10 +1,7 @@
 <template>
 	<view>
 		<view class="uni-header">
-			<view class="uni-group">
-				<view class="uni-title"></view>
-				<view class="uni-sub-title"></view>
-			</view>
+			<uni-stat-breadcrumb class="uni-stat-breadcrumb-on-phone" />
 			<view class="uni-group">
 				<input class="uni-search" type="text" v-model="query" placeholder="请输入搜索内容" />
 				<button class="uni-button" type="default" size="mini" @click="search">搜索</button>
@@ -69,6 +66,8 @@
 	// 分页配置
 	const pageSize = 10
 	const pageCurrent = 1
+	
+	const blogArticles = uniCloud.importObject('uni-blog-articles')
 
 	export default {
 		data() {
@@ -82,6 +81,9 @@
 					pageCurrent
 				}
 			}
+		},
+		async onLoad() {
+			await blogArticles.list({category_id: "63789ef8e7f27c000189554e"})
 		},
 		methods: {
 			getWhere() {

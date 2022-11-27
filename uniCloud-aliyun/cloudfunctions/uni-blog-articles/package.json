@@ -1,0 +1,7 @@
+{
+  "name": "uni-blog-articles",
+  "dependencies": {},
+  "extensions": {
+    "uni-cloud-jql": {}
+  }
+}
