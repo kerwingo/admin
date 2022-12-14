@@ -39,22 +39,56 @@ module.exports = {
 				errMsg: '参数不能为空'
 			}
 		}
-		if (!httpInfo.body) {
-			return {
-				errCode: 'BODY_IS_NULL',
-				errMsg: '参数不能为空'
+		let data, category_id
+		if (httpInfo) {
+			if (!httpInfo.body) {
+				return {
+					errCode: 'BODY_IS_NULL',
+					errMsg: '参数不能为空'
+				}
+			} else {
+				data = JSON.parse(httpInfo.body)
+				category_id = data.category_id || ''
 			}
+		} else {
+			category_id = param.category_id || ''
 		}
-		const data = JSON.parse(httpInfo.body)
-		const category_id = data.category_id || ''
 		// 业务逻辑
 		let res;
 		if (category_id) {
 			res = await db.collection(dbCollectionName).where({
 				'category_id': category_id
+			}).field({
+				'article_status': true,
+				'avatar': true,
+				'category_id': true,
+				'comment_count': true,
+				'comment_status': true,
+				'excerpt': true,
+				'is_essence': true,
+				'is_sticky': true,
+				'last_modify_date': true,
+				'like_count': true,
+				'publish_date': true,
+				'title': true,
+				'view_count': true,
 			}).get()
 		} else {
-			res = await db.collection(dbCollectionName).get()
+			res = await db.collection(dbCollectionName).field({
+				'article_status': true,
+				'avatar': true,
+				'category_id': true,
+				'comment_count': true,
+				'comment_status': true,
+				'excerpt': true,
+				'is_essence': true,
+				'is_sticky': true,
+				'last_modify_date': true,
+				'like_count': true,
+				'publish_date': true,
+				'title': true,
+				'view_count': true,
+			}).get()
 		}
 		// 返回结果
 		return {
@@ -63,7 +97,7 @@ module.exports = {
 		}
 	},
 	async add(param) {
-		if(httpInfo && httpInfo.body) {
+		if (httpInfo && httpInfo.body) {
 			param = httpInfo.body
 		}
 		if (httpInfo && !httpInfo.body) {
@@ -72,8 +106,35 @@ module.exports = {
 				errMsg: '参数不能为空'
 			}
 		}
-		const data = typeof param === 'object'? param : JSON.parse(param)
+		const data = typeof param === 'object' ? param : JSON.parse(param)
 		const res = await db.collection(dbCollectionName).add(data)
+		return {
+			code: 200,
+			data: res
+		}
+	},
+	async detail(id) {
+		if(httpInfo) {
+			id = httpInfo.queryStringParameters.id
+		}
+		const res = await db.collection(dbCollectionName).where({
+			'_id': id
+		}).field({
+			'article_status': true,
+			'avatar': true,
+			'category_id': true,
+			'comment_count': true,
+			'comment_status': true,
+			'excerpt': true,
+			'content': true,
+			'is_essence': true,
+			'is_sticky': true,
+			'last_modify_date': true,
+			'like_count': true,
+			'publish_date': true,
+			'title': true,
+			'view_count': true,
+		}).get()
 		return {
 			code: 200,
 			data: res

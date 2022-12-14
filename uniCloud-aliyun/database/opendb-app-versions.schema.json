@@ -63,8 +63,7 @@
 		},
 		"platform": {
 			"bsonType": "array",
-			"enum": [
-				{
+			"enum": [{
 					"value": "Android",
 					"text": "安卓"
 				},
@@ -78,8 +77,7 @@
 		},
 		"type": {
 			"bsonType": "string",
-			"enum": [
-				{
+			"enum": [{
 					"value": "native_app",
 					"text": "原生App安装包"
 				},

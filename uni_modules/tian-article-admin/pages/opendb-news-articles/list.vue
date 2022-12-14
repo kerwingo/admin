@@ -66,8 +66,8 @@
 	// 分页配置
 	const pageSize = 10
 	const pageCurrent = 1
-	
-	const blogArticles = uniCloud.importObject('uni-blog-articles')
+
+	const blogArticles = uniCloud.importObject('blog-articles')
 
 	export default {
 		data() {
@@ -83,7 +83,11 @@
 			}
 		},
 		async onLoad() {
-			// await blogArticles.list({category_id: "63789ef8e7f27c000189554e"})
+			const res = await blogArticles.list({
+				category_id: "63789ef8e7f27c000189554e"
+			})
+			const res2 = await blogArticles.detail("637909db90b26d000189067b")
+			console.log(res)
 		},
 		methods: {
 			getWhere() {
