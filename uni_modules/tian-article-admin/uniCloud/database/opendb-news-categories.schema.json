@@ -42,6 +42,11 @@
 			"forceDefaultValue": {
 				"$env": "now"
 			}
+		},
+		"color": {
+			"bsonType": "string",
+			"description": "该类别背景颜色",
+			"label": "颜色"
 		}
 	}
 }

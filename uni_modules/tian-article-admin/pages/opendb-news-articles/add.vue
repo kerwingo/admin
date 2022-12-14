@@ -153,21 +153,23 @@
 			},
 
 			submitForm(value) {
+				const blogArticles = uniCloud.importObject('blog-articles')
+				blogArticles.add(value)
 				// 使用 unicloud-db 提交数据
-				db.collection(dbCollectionName).add(value).then((res) => {
-					uni.showToast({
-						title: '新增成功'
-					})
-					this.getOpenerEventChannel().emit('refreshData')
-					setTimeout(() => uni.navigateBack(), 500)
-				}).catch((err) => {
-					uni.showModal({
-						content: err.message || '请求服务失败',
-						showCancel: false
-					})
-				}).finally(() => {
-					uni.hideLoading()
-				})
+				// db.collection(dbCollectionName).add(value).then((res) => {
+				// 	uni.showToast({
+				// 		title: '新增成功'
+				// 	})
+				// 	this.getOpenerEventChannel().emit('refreshData')
+				// 	setTimeout(() => uni.navigateBack(), 500)
+				// }).catch((err) => {
+				// 	uni.showModal({
+				// 		content: err.message || '请求服务失败',
+				// 		showCancel: false
+				// 	})
+				// }).finally(() => {
+				// 	uni.hideLoading()
+				// })
 			}
 		}
 	}

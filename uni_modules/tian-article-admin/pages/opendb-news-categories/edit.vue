@@ -13,6 +13,9 @@
 			<uni-forms-item name="sort" label="排序">
 				<uni-easyinput placeholder="类别显示顺序" type="number" v-model="formData.sort" />
 			</uni-forms-item>
+			<uni-forms-item name="color" label="颜色">
+				<uni-easyinput placeholder="类别显示颜色"  v-model="formData.color" />
+			</uni-forms-item>
 			<uni-forms-item name="article_count" label="文章数">
 				<uni-easyinput placeholder="该类别下文章数量" type="number" v-model="formData.article_count" />
 			</uni-forms-item>
