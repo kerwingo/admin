@@ -88,13 +88,13 @@
         "template" : "template.h5.html",
         "router" : {
             "mode" : "hash",
-            "base" : "/kerwingo.github.io.admin/"
+            "base" : ""
         },
         "uniStatistics" : {
             "enable" : true
         },
         "devServer" : {
-            "https" : false
+            "https" : true
         }
     },
     "vueVersion" : "2",
